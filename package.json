@@ -1,0 +1,13 @@
+{
+  "name": "parsehttpdate",
+  "version": "1.0.0",
+  "description": "Parses the value of the Date header in HTTP responses.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "license": "X11",
+  "devDependencies": {
+    "jest": "^23.5.0"
+  }
+}
