@@ -11,7 +11,7 @@ const monthNames = 'anebarprayunulugepctovec';
 //                                   r
 
 /**
- * Parses the passed date which has the preferred format as defined in HTTP/1.1. An example of such a date is:
+ * Parses the passed date which has the preferred format as defined by HTTP/1.1. An example of such a date is:
  *
  *   Tue, 15 Nov 1994 08:12:31 GMT
  *
