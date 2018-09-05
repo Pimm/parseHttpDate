@@ -9,7 +9,7 @@ This format is used in HTTP headers such as _Date_, _Last-Modified_, and _Expire
 ## Usage
 
 ```javascript
-import parseHttpDate from 'parseHttpDate';
+import parseHttpDate from 'parsehttpdate';
 
 parseHttpDate('Wed, 21 Oct 2015 07:28:00 GMT');
 ```
