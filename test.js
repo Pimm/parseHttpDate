@@ -1,8 +1,9 @@
 const parseHttpDate = require('.');
 
-test('parseHttpDate', () => { 
+test('parsing', () => {
 	expect(parseHttpDate('Sun, 06 Nov 1994 08:49:37 GMT').toISOString()).toBe('1994-11-06T08:49:37.000Z');
 	expect(parseHttpDate('Wed, 21 Oct 2015 07:28:00 GMT').toISOString()).toBe('2015-10-21T07:28:00.000Z');
+	// Ensure every month is correctly parsed.
 	expect(parseHttpDate('Tue, 04 Jan 2018 13:01:35 GMT').toISOString()).toBe('2018-01-04T13:01:35.000Z');
 	expect(parseHttpDate('Tue, 04 Feb 2018 13:01:35 GMT').toISOString()).toBe('2018-02-04T13:01:35.000Z');
 	expect(parseHttpDate('Tue, 04 Mar 2018 13:01:35 GMT').toISOString()).toBe('2018-03-04T13:01:35.000Z');
@@ -15,4 +16,16 @@ test('parseHttpDate', () => {
 	expect(parseHttpDate('Tue, 04 Oct 2018 13:01:35 GMT').toISOString()).toBe('2018-10-04T13:01:35.000Z');
 	expect(parseHttpDate('Tue, 04 Nov 2018 13:01:35 GMT').toISOString()).toBe('2018-11-04T13:01:35.000Z');
 	expect(parseHttpDate('Tue, 04 Dec 2018 13:01:35 GMT').toISOString()).toBe('2018-12-04T13:01:35.000Z');
+});
+
+test('validating', () => {
+	// Validation is implicitly turned on. (Note that the format is incorrect.)
+	expect(parseHttpDate.bind(undefined, '2015-10-21T07:28:00.000Z'))
+	.toThrow();
+	// Validation is explicitly turned on.
+	expect(parseHttpDate.bind(undefined, '2015-10-21T07:28:00.000Z', true))
+	.toThrow();
+	// Validation is turned off.
+	expect(parseHttpDate.bind(undefined, '2015-10-21T07:28:00.000Z', false))
+	.not.toThrow();
 });
