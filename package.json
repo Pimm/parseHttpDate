@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Parses the value of the Date header in HTTP responses.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "jest"
   },

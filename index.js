@@ -16,7 +16,7 @@ const monthsNames = 'anebarprayunulugepctovec';
  *   Tue, 15 Nov 1994 08:12:31 GMT
  *
  * This format is a subset of the date and time specification used by the Internet Message Format. Note that the
- * specification also defines two obsolete formats, which this implementation does not support. 
+ * specification also defines two obsolete formats, which this implementation does not support.
  */
 module.exports = function parseHttpDate(value, validate) {
 	if (false != validate) {
