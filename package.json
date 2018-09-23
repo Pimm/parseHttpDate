@@ -2,6 +2,11 @@
   "name": "parsehttpdate",
   "version": "1.0.0",
   "description": "Parses the value of the Date header in HTTP responses.",
+  "keywords": ["http", "dates", "date", "last-modified"],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Pimm/parseHttpDate.git"
+  },
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
