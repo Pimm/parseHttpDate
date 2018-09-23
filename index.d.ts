@@ -8,8 +8,9 @@
  *
  * @param {string} value - The date, represented as a string in a certain format.
  * @param {boolean=} validate - Whether the passed date should be validated before being parsed. Not validating (false)
- *                              is faster, but might produce incorrect results. Validating (true, default) causes an
- *                              error to be thrown if the passed date is not formatted correctly.
+ *                              is faster, but behaviour is undefined if the passed date is not formatted correctly.
+ *                              Validating (true, default) causes an error to be thrown if the passed date is not
+ *                              formatted correctly.
  * @return {Date} The parsed date.
  */
 declare function parseHttpDate(value: string, validate?: boolean): Date;
