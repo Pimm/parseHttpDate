@@ -1,10 +1,10 @@
 # parseHttpDate
 
-Parses dates which have the preferred format [as defined by HTTP/1.1](https://tools.ietf.org/html/rfc7231#section-7.1.1.1). An example of such a date is:
+Parses date-times which have the preferred format [as defined by HTTP/1.1](https://tools.ietf.org/html/rfc7231#section-7.1.1.1). An example of such a date-time is:
 
 > Tue, 15 Nov 1994 08:12:31 GMT
 
-This format is used in HTTP headers such as _Date_, _Last-Modified_, and _Expires_. It is a subset of the date and time specification used by the [Internet Message Format](https://tools.ietf.org/html/rfc5322). Note that the HTTP/1.1 specification also defines two obsolete formats, which this implementation does not support.
+This format is used in HTTP headers such as _Date_, _Last-Modified_, and _Expires_. It is a subset of the specification used by the [Internet Message Format](https://tools.ietf.org/html/rfc5322). Note that the HTTP/1.1 specification also defines two obsolete formats, which this implementation does not support.
 
 ## Usage
 
@@ -12,6 +12,49 @@ This format is used in HTTP headers such as _Date_, _Last-Modified_, and _Expire
 import parseHttpDate from 'parsehttpdate';
 
 parseHttpDate('Wed, 21 Oct 2015 07:28:00 GMT');
+```
+
+### Combined with [fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API)
+
+This is how you can determine the time according to your server:
+
+```javascript
+import parseHttpDate from 'parsehttpdate';
+
+fetch('/')
+.then(({headers}) => {
+	if (headers.has('Date')) {
+		return headers.get('Date');
+	} else /* if (false == headers.has('Date')) */ {
+		throw new Error('The response lacks a Date header');
+	}
+})
+.then(parseHttpDate)
+.then(date => {
+	console.log(date.toTimeString());
+});
+```
+
+### Advanced usage
+
+If you are fairly certain the input is formatted correctly, you can squeeze out some extra performance by turning off validation.
+
+```javascript
+import parseHttpDate from 'parsehttpdate';
+
+parseHttpDate('Wed, 21 Oct 2015 07:28:00 GMT', false);
+```
+
+## ISO 8601 timestamps
+
+Does your date-time look nothing like the example above, but rather something like this?
+
+> 1994-11-06T08:49:37Z
+
+Congratulations: your date-time is formatted [according to ISO 8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15). _You don't need parseHttpDate_. You don't need any library.
+
+```javascript
+new Date('1994-11-06T08:49:37Z');
 ```
 
 ## License (X11/MIT)

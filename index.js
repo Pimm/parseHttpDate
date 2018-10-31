@@ -11,12 +11,13 @@ const monthsNames = 'anebarprayunulugepctovec';
 //                                    r
 
 /**
- * Parses the passed date which has the preferred format as defined by HTTP/1.1. An example of such a date is:
+ * Parses the passed date-time which has the preferred format as defined by HTTP/1.1. An example of such a date-time
+ * is:
  *
  *   Tue, 15 Nov 1994 08:12:31 GMT
  *
- * This format is a subset of the date and time specification used by the Internet Message Format. Note that the
- * specification also defines two obsolete formats, which this implementation does not support.
+ * This format is a subset of the specification used by the Internet Message Format. Note that the specification also
+ * defines two obsolete formats, which this implementation does not support.
  */
 module.exports = function parseHttpDate(value, validate) {
 	if (false != validate) {
