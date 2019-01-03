@@ -35,6 +35,26 @@ fetch('/')
 });
 ```
 
+Dit is hetzelfde voorbeeld met een [async-functie](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function):
+
+```javascript
+import parseHttpDate from 'parsehttpdate';
+
+async function getServerDate() {
+	const {headers} = await fetch('/');
+	if (headers.has('Date')) {
+		return parseHttpDate(headers.get('Date'));
+	} else /* if (false == headers.has('Date')) */ {
+		throw new Error('The response lacks a Date header');
+	}
+}
+
+getServerDate()
+.then(date => {
+	console.log(date.toTimeString());
+});
+```
+
 ### Geavanceerd gebruik
 
 Als je er vrij zeker van bent dat de invoer is opgeschreven in het correcte formaat, kun je de prestaties nog iets verbeteren door validatie uit te zetten.

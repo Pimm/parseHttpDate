@@ -35,6 +35,26 @@ fetch('/')
 });
 ```
 
+This is the same example using an [async function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function):
+
+```javascript
+import parseHttpDate from 'parsehttpdate';
+
+async function getServerDate() {
+	const {headers} = await fetch('/');
+	if (headers.has('Date')) {
+		return parseHttpDate(headers.get('Date'));
+	} else /* if (false == headers.has('Date')) */ {
+		throw new Error('The response lacks a Date header');
+	}
+}
+
+getServerDate()
+.then(date => {
+	console.log(date.toTimeString());
+});
+```
+
 ### Advanced usage
 
 If you are fairly certain the input is formatted correctly, you can squeeze out some extra performance by turning off validation.
