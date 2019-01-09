@@ -27,13 +27,13 @@ module.exports = function parseHttpDate(value, validate) {
 	}
 
 	return new Date(Date.UTC(
-		parseInt(value.substr(12, 4), 10),
+		parseInt(value.substring(12, 16), 10),
 		// (Skip over the first character of the month abbreviation, as we can safely detect the name by the second and
 		// third character only.)
-		monthsNames.indexOf(value.substr(9, 2)) >> 1,
-		parseInt(value.substr(5, 2), 10),
-		parseInt(value.substr(17, 2), 10),
-		parseInt(value.substr(20, 2), 10),
-		parseInt(value.substr(23, 2), 10)
+		monthsNames.indexOf(value.substring(9, 11)) >> 1,
+		parseInt(value.substring(5, 7), 10),
+		parseInt(value.substring(17, 19), 10),
+		parseInt(value.substring(20, 22), 10),
+		parseInt(value.substring(23, 25), 10)
 	));
 };
