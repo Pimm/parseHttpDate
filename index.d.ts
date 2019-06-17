@@ -16,4 +16,4 @@
  */
 declare function parseHttpDate(value: string, validate?: boolean): Date;
 
-export = parseHttpDate;
+export default parseHttpDate;

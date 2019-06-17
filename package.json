@@ -1,24 +1,38 @@
 {
   "name": "parsehttpdate",
+  "description": "Parses the value of the Date header in HTTP responses",
   "version": "1.0.1",
-  "description": "Parses the value of the Date header in HTTP responses.",
+  "main": "compiled/cjs/parsehttpdate.min.js",
+  "module": "compiled/esm/parsehttpdate.min.js",
+  "unpkg": "compiled/iife/parsehttpdatet.min.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "compiled",
+    "index.d.ts",
+    "copying.txt"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "^7.4.5",
+    "jest": "^24.8.0",
+    "rollup": "^1.15.6",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-babel-minify": "^8.0.0",
+    "typescript": "^3.5.2"
+  },
+  "scripts": {
+    "build": "rollup --config rollup.config.js",
+    "test": "jest && tsc --strict --noEmit test/type-test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pimm/parseHttpDate.git"
+  },
   "keywords": [
     "http",
     "dates",
     "date",
     "last-modified"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Pimm/parseHttpDate.git"
-  },
-  "main": "index.js",
-  "types": "index.d.ts",
-  "scripts": {
-    "test": "jest"
-  },
-  "license": "X11",
-  "devDependencies": {
-    "jest": "^24.8.0"
-  }
+  ]
 }

@@ -19,7 +19,7 @@ const monthsNames = 'anebarprayunulugepctovec';
  * This format is a subset of the specification used by the Internet Message Format. Note that the specification also
  * defines two obsolete formats, which this implementation does not support.
  */
-module.exports = function parseHttpDate(value, validate) {
+export default function parseHttpDate(value, validate) {
 	if (false != validate) {
 		if (false == validDateMatcher.test(value)) {
 			throw new Error('The passed value has an unexpected format');
