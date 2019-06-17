@@ -14,10 +14,14 @@ const monthsNames = 'anebarprayunulugepctovec';
  * Parses the passed date-time which has the preferred format as defined by HTTP/1.1. An example of such a date-time
  * is:
  *
- *   Tue, 15 Nov 1994 08:12:31 GMT
+ * > Tue, 15 Nov 1994 08:12:31 GMT
  *
  * This format is a subset of the specification used by the Internet Message Format. Note that the specification also
  * defines two obsolete formats, which this implementation does not support.
+ *
+ * The second argument determines whether the passed date-time should be validated before being parsed. Not validating
+ * (`false`) is faster, but behaviour is undefined if the passed date-time is not formatted correctly. Validating
+ * (`true`, default) causes an error to be thrown if the passed date-time is not formatted correctly.
  */
 export default function parseHttpDate(value, validate) {
 	if (false != validate) {
@@ -25,7 +29,6 @@ export default function parseHttpDate(value, validate) {
 			throw new Error('The passed value has an unexpected format');
 		}
 	}
-
 	return new Date(Date.UTC(
 		parseInt(value.substring(12, 16), 10),
 		// (Skip over the first character of the month abbreviation, as we can safely detect the name by the second and
