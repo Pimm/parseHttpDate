@@ -24,7 +24,7 @@
   },
   "scripts": {
     "build": "rollup --config rollup.config.js",
-    "test": "jest && tsc --strict --noEmit test/type-test.ts"
+    "test": "npm run-script build && jest && tsc --strict --noEmit test/type-test.ts"
   },
   "author": {
     "name": "Pimm \"de Chinchilla\" Hogeling",
