@@ -17,7 +17,7 @@ import parseHttpDate from 'parseHttpDate';
 
 Alternatively, include `parsehttpdate` through unpkg:
 ```html
-<script src="https://unpkg.com/parsehttpdate@^1.0.2"></script>
+<script src="https://unpkg.com/parsehttpdate@^1.0.3"></script>
 ```
 This alternative makes the function available at `window.parseHttpDate`.
 
