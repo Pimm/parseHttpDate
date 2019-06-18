@@ -25,6 +25,10 @@
     "build": "rollup --config rollup.config.js",
     "test": "jest && tsc --strict --noEmit test/type-test.ts"
   },
+  "author": {
+    "name": "Pimm \"de Chinchilla\" Hogeling",
+    "url": "https://null.house"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Pimm/parseHttpDate.git"
