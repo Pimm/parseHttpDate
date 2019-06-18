@@ -1,16 +1,29 @@
-# parseHttpDate
+Ontleedt de waarde van de `Date` header in HTTP antwoorden.
 
-Ontleedt datum-tijdstippen die zijn opgeschreven in het aangeraden formaat [gedefinieerd door HTTP/1.1](https://tools.ietf.org/html/rfc7231#section-7.1.1.1). Een voorbeeld van zo een datum-tijdstip is:
+## Omschrijving
+
+Ontleedt datum-tijdstippen van HTTP-headers zoals _Date_, _Last-Modified_, en _Expires_. Die datum-tijdstippen zijn bijna altijd opgeschreven in het aangeraden formaat [gedefinieerd door HTTP/1.1](https://tools.ietf.org/html/rfc7231#section-7.1.1.1). Een voorbeeld van zo een datum-tijdstip is:
 
 > Tue, 15 Nov 1994 08:12:31 GMT
 
-Dit formaat zie je terug in HTTP-headers zoals _Date_, _Last-Modified_, en _Expires_. Het is een subgroep van de specificatie die wordt gebruikt door in het [Internet Message Format](https://tools.ietf.org/html/rfc5322). Let op: de HTTP/1.1-specificatie definieert ook twee verouderde formaten die niet worden ondersteund door deze implementatie.
+Dit formaat is een subgroep van de specificatie die wordt gebruikt door in het [Internet Message Format](https://tools.ietf.org/html/rfc5322).
 
-## Gebruik
+# Installatie
 
+Installeer `parsehttpdate` met npm of Yarn en importeer de functie:
 ```javascript
 import parseHttpDate from 'parsehttpdate';
+```
 
+Als alternatief kan `parsehttpdate` ook worden binnengehaald met unpkg:
+```html
+<script src="https://unpkg.com/parsehttpdate@^1.0.2"></script>
+```
+Met deze aanpak wordt de functie beschikbaar als `window.parseHttpDate`.
+
+# Gebruik
+
+```javascript
 parseHttpDate('Wed, 21 Oct 2015 07:28:00 GMT');
 ```
 
@@ -60,25 +73,31 @@ getServerDate()
 Als je er vrij zeker van bent dat de invoer is opgeschreven in het correcte formaat, kun je de prestaties nog iets verbeteren door validatie uit te zetten.
 
 ```javascript
-import parseHttpDate from 'parsehttpdate';
-
 parseHttpDate('Wed, 21 Oct 2015 07:28:00 GMT', false);
 ```
 
-## ISO 8601 tijdsaanduiding
+## Andere formaten
 
 Ziet jouw datum-tijdstip er niet uit zoals het voorbeeld hierboven, maar meer zo?
 
 > 1994-11-06T08:49:37Z
 
-Gefeliciteerd: jouw datum-tijdstip is opgeschreven in het [ISO 8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15)-formaat. _Je hebt parseHttpDate niet nodig_. Je hebt geen enkele bibliotheek nodig.
+Gefeliciteerd: jouw datum-tijdstip is opgeschreven in het [ISO 8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15)-formaat. _Je hebt parseHttpDate niet nodig_. Je hebt geen enkele bibliotheek nodig:
 
 ```javascript
 new Date('1994-11-06T08:49:37Z');
 ```
 
+De HTTP/1.1-specificatie definieert ook twee verouderde formaten naast het aangerade formaat van de bovengenoemde voorbeelden:
+
+> Sunday, 06-Nov-94 08:49:37 GMT
+
+> Sun Nov  6 08:49:37 1994
+
+Deze implementatie ondersteunt deze niet.
+
 ## Licentie (X11/MIT)
-Copyright (c) 2018 Pimm "de Chinchilla" Hogeling
+Copyright (c) 2018, 2019 Pimm "de Chinchilla" Hogeling
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
