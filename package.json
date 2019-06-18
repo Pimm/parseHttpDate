@@ -4,7 +4,7 @@
   "version": "1.0.2",
   "main": "compiled/cjs/parsehttpdate.min.js",
   "module": "compiled/esm/parsehttpdate.min.js",
-  "unpkg": "compiled/iife/parsehttpdatet.min.js",
+  "unpkg": "compiled/iife/parsehttpdate.min.js",
   "types": "index.d.ts",
   "files": [
     "index.js",
