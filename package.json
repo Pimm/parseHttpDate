@@ -1,7 +1,7 @@
 {
   "name": "parsehttpdate",
   "description": "Parses the value of the Date header in HTTP responses",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "compiled/cjs/parsehttpdate.min.js",
   "module": "compiled/esm/parsehttpdate.min.js",
   "unpkg": "compiled/iife/parsehttpdate.min.js",
