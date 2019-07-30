@@ -2,11 +2,11 @@ Ontleedt de waarde van de `Date` header in HTTP antwoorden.
 
 ## Omschrijving
 
-Ontleedt datum-tijdstippen van HTTP-headers zoals _Date_, _Last-Modified_, en _Expires_. Die datum-tijdstippen zijn bijna altijd opgeschreven in het aangeraden formaat [gedefinieerd door HTTP/1.1](https://tools.ietf.org/html/rfc7231#section-7.1.1.1). Een voorbeeld van zo een datum-tijdstip is:
+Ontleedt datum-tijdstippen van HTTP-headers zoals _Date_, _Last-Modified_, en _Expires_. Die datum-tijdstippen zijn bijna altijd opgeschreven in het aangeraden formaat [gedefinieerd door HTTP/1.1][http-1.1]. Een voorbeeld van zo een datum-tijdstip is:
 
 > Tue, 15 Nov 1994 08:12:31 GMT
 
-Dit formaat is een subgroep van de specificatie die wordt gebruikt door in het [Internet Message Format](https://tools.ietf.org/html/rfc5322).
+Dit formaat is een subgroep van de specificatie die wordt gebruikt door in het [Internet Message Format][imf].
 
 # Installatie
 
@@ -27,7 +27,7 @@ Met deze aanpak wordt de functie beschikbaar als `window.parseHttpDate`.
 parseHttpDate('Wed, 21 Oct 2015 07:28:00 GMT');
 ```
 
-### In combinatie met [fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API)
+### In combinatie met [fetch][mdn-fetch]
 
 Op deze manier vind je de tijd volgens jouw server:
 
@@ -48,7 +48,7 @@ fetch('/')
 });
 ```
 
-Dit is hetzelfde voorbeeld met een [async-functie](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function):
+Dit is hetzelfde voorbeeld met een [async-functie][mdn-async-function]:
 
 ```javascript
 import parseHttpDate from 'parsehttpdate';
@@ -82,7 +82,7 @@ Ziet jouw datum-tijdstip er niet uit zoals het voorbeeld hierboven, maar meer zo
 
 > 1994-11-06T08:49:37Z
 
-Gefeliciteerd: jouw datum-tijdstip is opgeschreven in het [ISO 8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15)-formaat. _Je hebt parseHttpDate niet nodig_. Je hebt geen enkele bibliotheek nodig:
+Gefeliciteerd: jouw datum-tijdstip is opgeschreven in het [ISO 8601][ecmascript-10-date-time]-formaat. _Je hebt deze bibliotheek niet nodig_. Je hebt geen enkele bibliotheek nodig:
 
 ```javascript
 new Date('1994-11-06T08:49:37Z');
@@ -94,7 +94,7 @@ De HTTP/1.1-specificatie definieert ook twee verouderde formaten naast het aange
 
 > Sun Nov  6 08:49:37 1994
 
-Deze implementatie ondersteunt deze niet.
+Deze bibliotheek ondersteunt deze niet.
 
 ## Licentie (X11/MIT)
 Copyright (c) 2018, 2019 Pimm "de Chinchilla" Hogeling
@@ -104,3 +104,10 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 **The Software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Software or the use or other dealings in the Software.**
+
+
+[http-1.1]: https://tools.ietf.org/html/rfc7231#section-7.1.1.1
+[imf]: https://tools.ietf.org/html/rfc5322
+[ecmascript-10-date-time]: http://www.ecma-international.org/ecma-262/10.0/#sec-date-time-string-format
+[mdn-fetch]: https://developer.mozilla.org/docs/Web/API/Fetch_API
+[mdn-async-function]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function
