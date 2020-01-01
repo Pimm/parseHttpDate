@@ -37,7 +37,7 @@ Op deze manier vind je de tijd volgens jouw server:
 import parseHttpDate from 'parsehttpdate';
 
 fetch('/')
-.then(({headers}) => {
+.then(({ headers }) => {
 	if (headers.has('Date')) {
 		return headers.get('Date');
 	} else /* if (false == headers.has('Date')) */ {
@@ -56,7 +56,7 @@ Dit is hetzelfde voorbeeld met een [async-functie][mdn-async-function]:
 import parseHttpDate from 'parsehttpdate';
 
 async function getServerDate() {
-	const {headers} = await fetch('/');
+	const { headers } = await fetch('/');
 	if (headers.has('Date')) {
 		return parseHttpDate(headers.get('Date'));
 	} else /* if (false == headers.has('Date')) */ {

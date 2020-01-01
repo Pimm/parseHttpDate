@@ -35,7 +35,7 @@ This is how you can determine the time according to your server:
 
 ```javascript
 fetch('/')
-.then(({headers}) => {
+.then(({ headers }) => {
 	if (headers.has('Date')) {
 		return headers.get('Date');
 	} else /* if (false == headers.has('Date')) */ {
@@ -52,7 +52,7 @@ This is the same example using an [async function][mdn-async-function]:
 
 ```javascript
 async function getServerDate() {
-	const {headers} = await fetch('/');
+	const { headers } = await fetch('/');
 	if (headers.has('Date')) {
 		return parseHttpDate(headers.get('Date'));
 	} else /* if (false == headers.has('Date')) */ {
