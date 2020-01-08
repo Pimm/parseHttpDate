@@ -1,1 +1,6 @@
-.babelrc
+{
+	"presets": [
+		"@babel/env",
+		"minify"
+	]
+}
