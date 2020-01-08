@@ -4,11 +4,11 @@ Parses the value of the `Date` header in HTTP responses.
 
 ## Description
 
-Parses date-times from HTTP headers such as _Date_, _Last Modified_, and _Expires_. Those date-times almost always have the preferred format [as defined by HTTP/1.1][http-1.1]. An example of such a date-time is:
+Parses date-times from HTTP headers such as _Date_, _Last Modified_, and _Expires_. An example of such a date-time is:
 
 > Tue, 15 Nov 1994 08:12:31 GMT
 
-This format is a subset of the specification used by the [Internet Message Format][imf].
+The format [is defined by HTTP/1.1][http-1.1] (and [HTTP/1.0][http-1.0]) and is a subset of the specification used by the [Internet Message Format][imf].
 
 # Installation
 
@@ -92,7 +92,7 @@ The HTTP/1.1 specification defines two obsolete formats besides the preferred fo
 
 > Sun Nov  6 08:49:37 1994
 
-This library does not support those.
+This library does not support those; the supported format has been the preferred one since 1996. [Please create an issue][issues] if your use case requires the others.
 
 # License (X11/MIT)
 Copyright (c) 2018-2019 Pimm "de Chinchilla" Hogeling
@@ -105,7 +105,9 @@ The above copyright notice and this permission notice shall be included in all c
 
 
 [http-1.1]: https://tools.ietf.org/html/rfc7231#section-7.1.1.1
+[http-1.0]: https://tools.ietf.org/html/rfc1945#section-3.3
 [imf]: https://tools.ietf.org/html/rfc5322
 [ecmascript-10-date-time]: http://www.ecma-international.org/ecma-262/10.0/#sec-date-time-string-format
 [mdn-fetch]: https://developer.mozilla.org/docs/Web/API/Fetch_API
 [mdn-async-function]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function
+[issues]: https://github.com/Pimm/parseHttpDate/issues

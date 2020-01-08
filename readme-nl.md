@@ -4,11 +4,11 @@ Ontleedt de waarde van de `Date` header in HTTP antwoorden.
 
 ## Omschrijving
 
-Ontleedt datum-tijdstippen van HTTP-headers zoals _Date_, _Last-Modified_, en _Expires_. Die datum-tijdstippen zijn bijna altijd opgeschreven in het aangeraden formaat [gedefinieerd door HTTP/1.1][http-1.1]. Een voorbeeld van zo een datum-tijdstip is:
+Ontleedt datum-tijdstippen van HTTP-headers zoals _Date_, _Last-Modified_, en _Expires_. Een voorbeeld van zo een datum-tijdstip is:
 
 > Tue, 15 Nov 1994 08:12:31 GMT
 
-Dit formaat is een subgroep van de specificatie die wordt gebruikt door in het [Internet Message Format][imf].
+Het formaat is [gedefinieerd door HTTP/1.1][http-1.1] (en [HTTP/1.0][http-1.0]) en is een subgroep van de specificatie die wordt gebruikt door in het [Internet Message Format][imf].
 
 # Installatie
 
@@ -96,7 +96,7 @@ De HTTP/1.1-specificatie definieert ook twee verouderde formaten naast het aange
 
 > Sun Nov  6 08:49:37 1994
 
-Deze bibliotheek ondersteunt deze niet.
+Deze bibliotheek ondersteunt deze niet; sinds 1996 is het gebruik van het ondersteunde formaat aanbevolen. [Maak alsjeblieft een issue aan][issues] als je de overige toch nodig hebt.
 
 ## Licentie (X11/MIT)
 Copyright (c) 2018, 2019 Pimm "de Chinchilla" Hogeling
@@ -109,7 +109,9 @@ The above copyright notice and this permission notice shall be included in all c
 
 
 [http-1.1]: https://tools.ietf.org/html/rfc7231#section-7.1.1.1
+[http-1.0]: https://tools.ietf.org/html/rfc1945#section-3.3
 [imf]: https://tools.ietf.org/html/rfc5322
 [ecmascript-10-date-time]: http://www.ecma-international.org/ecma-262/10.0/#sec-date-time-string-format
 [mdn-fetch]: https://developer.mozilla.org/docs/Web/API/Fetch_API
 [mdn-async-function]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function
+[issues]: https://github.com/Pimm/parseHttpDate/issues
