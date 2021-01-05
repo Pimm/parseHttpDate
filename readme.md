@@ -95,7 +95,7 @@ The HTTP/1.1 specification defines two obsolete formats besides the preferred fo
 This library does not support those; the supported format has been the preferred one since 1996. [Please create an issue][issues] if your use case requires the others.
 
 # License (X11/MIT)
-Copyright (c) 2018-2019 Pimm "de Chinchilla" Hogeling
+Copyright (c) 2018-2021 Pimm "de Chinchilla" Hogeling
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
