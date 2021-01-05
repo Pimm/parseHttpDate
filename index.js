@@ -26,14 +26,15 @@ export default function parseHttpDate(value, validate) {
 			throw new Error('The passed value has an unexpected format');
 		}
 	}
+	const substring = value.substring.bind(value);
 	return new Date(Date.UTC(
-		parseInt(value.substring(12, 16), 10),
+		parseInt(substring(12, 16), 10),
 		// (Skip over the first character of the month abbreviation, as we can safely detect the name by the second and
 		// third character only.)
-		monthsNames.indexOf(value.substring(9, 11)) >> 1,
-		parseInt(value.substring(5, 7), 10),
-		parseInt(value.substring(17, 19), 10),
-		parseInt(value.substring(20, 22), 10),
-		parseInt(value.substring(23, 25), 10)
+		monthsNames.indexOf(substring(9, 11)) >> 1,
+		parseInt(substring(5, 7), 10),
+		parseInt(substring(17, 19), 10),
+		parseInt(substring(20, 22), 10),
+		parseInt(substring(23, 25), 10)
 	));
 }
