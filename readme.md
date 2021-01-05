@@ -4,7 +4,7 @@ Parses the value of the `Date` header in HTTP responses.
 
 ## Description
 
-Parses date-times from HTTP headers such as _Date_, _Last Modified_, and _Expires_. An example of such a date-time is:
+Parses date-times from HTTP headers such as _Date_, _Last-Modified_, and _Expires_. An example of such a date-time is:
 
 > Tue, 15 Nov 1994 08:12:31 GMT
 
