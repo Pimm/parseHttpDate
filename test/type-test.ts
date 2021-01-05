@@ -2,7 +2,7 @@ import parseHttpDate from '..';
 
 // This file is used to test the type definitions in `index.d.ts`.
 
-export function basics(): Date[] {
+export function basics(): Array<Date> {
 	return [
 		parseHttpDate(
 			'Wed, 21 Oct 2015 07:28:00 GMT',
