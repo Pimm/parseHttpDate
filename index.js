@@ -1,6 +1,6 @@
 // (The number of seconds may start with a 6 because of leap seconds.)
-const validDateMatcher = /^[A-Z][a-z]{2}, [0-3]\d (?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} [0-2]\d:[0-5]\d:[0-6]\d GMT$/;
-
+const pattern = /^[F-W][a-u]{2}, [0-3]\d (?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{4} [0-2]\d:[0-5]\d:[0-6]\d GMT$/;
+//                ⎣day o' week⎦  ⎣date ⎦ ⎣                      month                      ⎦ ⎣yr ⎦ ⎣hour ⎦ ⎣ min ⎦ ⎣ sec ⎦
 //                   J F M A M J J A S O N D
 const monthsNames = 'anebarprayunulugepctovec';
 //                    u r c i   e y u t o e e
@@ -22,7 +22,7 @@ const monthsNames = 'anebarprayunulugepctovec';
  */
 export default function parseHttpDate(value, validate) {
 	if (false != validate) {
-		if (false == validDateMatcher.test(value)) {
+		if (false == pattern.test(value)) {
 			throw new Error('The passed value has an unexpected format');
 		}
 	}
