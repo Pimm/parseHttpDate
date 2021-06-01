@@ -10,6 +10,6 @@
 
 * Now rolling up the library as a CommonJS module, an ES module, and an IIFE.
 
-### 1.0.3 - 1.0.7
+### 1.0.3 - 1.0.8
 
 (No changes)

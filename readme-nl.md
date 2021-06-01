@@ -19,7 +19,7 @@ import parseHttpDate from 'parsehttpdate';
 
 Als alternatief kan `parsehttpdate` ook worden binnengehaald met unpkg:
 ```html
-<script src="https://unpkg.com/parsehttpdate@^1.0.7"></script>
+<script src="https://unpkg.com/parsehttpdate@^1.0.8"></script>
 ```
 Met deze aanpak wordt de functie beschikbaar als `window.parseHttpDate`.
 
