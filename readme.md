@@ -14,7 +14,7 @@ The format [is defined by HTTP/1.1][http-1.1] (and [HTTP/1.0][http-1.0]) and is 
 
 Install `parsehttpdate` using npm or Yarn and import the function:
 ```javascript
-import parseHttpDate from 'parseHttpDate';
+import parseHttpDate from 'parsehttpdate';
 ```
 
 Alternatively, include `parsehttpdate` through unpkg:
