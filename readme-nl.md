@@ -1,4 +1,4 @@
-# parsehttpdate &middot; [![Licentie (X11/MIT)](https://badgen.net/github/license/pimm/parseHttpDate)](https://github.com/Pimm/parseHttpDate/blob/master/copying.txt) [![npm versie](https://badgen.net/npm/v/parsehttpdate)](https://www.npmjs.com/package/parsehttpdate) [![Build status](https://travis-ci.org/Pimm/parseHttpDate.svg?branch=master)](https://travis-ci.org/Pimm/parseHttpDate) [![Coverage status](https://coveralls.io/repos/github/Pimm/parseHttpDate/badge.svg?branch=master)](https://coveralls.io/github/Pimm/parseHttpDate?branch=master)
+# parsehttpdate &middot; [![Licentie (X11/MIT)](https://badgen.net/github/license/pimm/parseHttpDate)](https://github.com/Pimm/parseHttpDate/blob/master/copying.txt) [![npm versie](https://badgen.net/npm/v/parsehttpdate)](https://www.npmjs.com/package/parsehttpdate) [![Build Status](https://api.travis-ci.com/Pimm/parseHttpDate.svg?branch=master)](https://app.travis-ci.com/github/Pimm/parseHttpDate) [![Coverage status](https://coveralls.io/repos/github/Pimm/parseHttpDate/badge.svg?branch=master)](https://coveralls.io/github/Pimm/parseHttpDate?branch=master)
 
 Ontleedt de waarde van de `Date` header in HTTP antwoorden.
 
