@@ -25,7 +25,7 @@
   "scripts": {
     "build": "rollup --config rollup.config.js",
     "test": "npm run-script build && jest && tsc --strict --noEmit test/type-test.ts",
-    "coverage": "npm run-script build && jest --coverage --coverageReporters=text-lcov | coveralls"
+    "coverage": "npm run-script build && jest --coverage"
   },
   "author": {
     "name": "Pimm \"de Chinchilla\" Hogeling",
